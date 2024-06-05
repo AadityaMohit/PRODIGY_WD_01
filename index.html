@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prodigy - Empowering Creativity</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"> <!-- Font Awesome icons -->
+
+    <style>
+        /* Reset styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #e0f7fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Navigation bar styles */
+        .navbar {
+       background: linear-gradient(#0fe0d9,rgb(0, 111, 113));
+            color: #fff;
+            padding: 15px 0;
+            text-align: center;
+        }
+
+        .navbar a {
+            color: #fff;
+            text-decoration: none;
+            padding: 10px 20px;
+            margin: 0 10px;
+            font-weight: bold;
+        }
+
+        .navbar a:hover {
+            background-color: #0277bd;
+            border-radius: 5px;
+        }
+
+        /* Carousel container styles */
+        .carousel-container {
+            width: 80%;
+            max-width: 800px;
+            height: 400px;
+            overflow: hidden;
+            position: relative;
+            margin: 40px auto;
+            border: 2px solid #0288d1;
+            border-radius: 10px;
+        }
+
+        .carousel-slide {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+        }
+
+        .carousel-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Section styles */
+        .section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        .section h2 {
+            margin-bottom: 20px;
+            color: #0288d1;
+        }
+
+        .section p {
+            margin-bottom: 30px;
+            font-size: 1.1em;
+        }
+
+        /* CTA button styles */
+        .cta-button {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #0288d1;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 1em;
+        }
+
+        .cta-button:hover {
+            background-color: #0277bd;
+        }
+
+        /* Advertisement container styles */
+        .advertisement-container {
+            background-color: #ffffff;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid #0288d1;
+            border-bottom: 2px solid #0288d1;
+        }
+
+        .advertisement-grid {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .advertisement-item {
+            background-color: #fff;
+            border: 1px solid #ddd;
+            border-radius: 10px;
+            padding: 20px;
+            max-width: 300px;
+            text-align: left;
+        }
+
+        .advertisement-image {
+            width: 100%;
+            border-bottom: 2px solid #0288d1;
+            border-radius: 10px 10px 0 0;
+        }
+
+        .advertisement-item h3 {
+            margin: 15px 0;
+            color: #0288d1;
+        }
+
+        .advertisement-item p {
+            margin-bottom: 15px;
+            font-size: 0.95em;
+        }
+
+        .advertisement-item .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            color: #fff;
+            background-color: #0288d1;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none;
+            font-size: 0.9em;
+        }
+
+        .advertisement-item .btn:hover {
+            background-color: #0277bd;
+        }
+
+        /* Footer styles */
+       /* Footer styles */
+.footer {
+    background-color: #0288d1; /* Sky blue background */
+    color: #fff; /* White text */
+    padding: 30px 20px; /* Increased padding for better spacing */
+    text-align: center;
+    border-top: 3px solid #0277bd; /* Slightly darker border at the top */
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+.footer p {
+    margin: 10px 0; /* Margin for spacing between paragraphs */
+}
+
+.footer .social-icons {
+    margin-top: 20px; /* Margin above the social icons */
+}
+
+.footer .social-icons a {
+    color: #fff; /* White color for icons */
+    margin: 0 10px; /* Spacing between icons */
+    font-size: 24px; /* Larger icon size */
+    transition: color 0.3s; /* Smooth transition for hover effect */
+}
+
+.footer .social-icons a:hover {
+    color: #b3e5fc; /* Lighter sky blue on hover */
+}
+Services section styles */
+.services-container {
+    background-color: #f1f8e9;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #0288d1;
+    border-bottom: 2px solid #0288d1;
+}
+
+.services-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.service-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+}
+
+.service-icon {
+    font-size: 3em;
+    color: #0288d1;
+    margin-bottom: 10px;
+}
+
+.service-item h3 {
+    margin: 15px 0;
+    color: #0288d1;
+}
+
+.service-item p {
+    margin-bottom: 15px;
+    font-size: 0.95em;
+}
+/* Testimonials section styles */
+.testimonials-container {
+    background-color: #e0f7fa;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #0288d1;
+    border-bottom: 2px solid #0288d1;
+}
+
+.testimonials-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.testimonial-author {
+    font-weight: bold;
+    color: #0288d1;
+}
+/* Features section styles */
+.features-container {
+    background-color: #e1f5fe;
+    padding: 40px 20px;
+    text-align: center;
+    border-top: 2px solid #0288d1;
+    border-bottom: 2px solid #0288d1;
+}
+
+.features-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 300px;
+    text-align: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.feature-icon {
+    font-size: 40px;
+    color: #0288d1;
+    margin-bottom: 10px;
+}
+
+.feature-item h3 {
+    margin-bottom: 10px;
+    color: #0288d1;
+}
+
+.feature-item p {
+    color: #333;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Navigation Bar -->
+<div class="navbar">
+    <a href="#">Home</a>
+    <a href="#">About</a>
+    <a href="#">Services</a>
+    <a href="#">Contact</a>
+</div>
+
+<!-- Carousel Section -->
+<div class="carousel-container">
+    <div class="carousel-slide">
+        <img class="carousel-image" src="img.jpeg" alt="Image 1">
+        <img class="carousel-image" src="img1.jpeg" alt="Image 2">
+        <img class="carousel-image" src="img2.jpeg" alt="Image 3">
+    </div>
+</div>
+
+<!-- Introduction Section -->
+<section class="section">
+    <h2>Welcome to Prodigy</h2>
+    <p>Empowering creativity through innovative solutions</p>
+    <a href="#" class="cta-button">Learn More</a>
+</section>
+
+<!-- Advertisement Section -->
+<div class="advertisement-container">
+    <h2>Discover Our Latest Offerings!</h2>
+    <p>Explore our cutting-edge solutions tailored to meet your needs.</p>
+    <div class="advertisement-grid">
+        <div class="advertisement-item">
+            <img class="advertisement-image" src="img8.jpeg" alt="Product 1">
+            <h3>Product 1</h3>
+            <p>Online internship.</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        <div class="advertisement-item">
+            <img class="advertisement-image" src="img7.jpeg" alt="Product 2">
+            <h3>Product 2</h3>
+            <p>Web Development</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+        <div class="advertisement-item">
+            <img class="advertisement-image" src="img9.jpeg" alt="Product 3">
+            <h3>Product 3</h3>
+            <p>Online classes</p>
+            <a href="#" class="btn">Learn More</a>
+        </div>
+    </div>
+</div><div class="features-container">
+    <h2>Our Features</h2>
+    <div class="features-grid">
+        <div class="feature-item">
+            <i class="fas fa-lightbulb feature-icon"></i>
+            <h3>Innovative Solutions</h3>
+            <p>We provide cutting-edge solutions to drive your business forward with creativity and efficiency.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-rocket feature-icon"></i>
+            <h3>Fast Deployment</h3>
+            <p>Our team ensures quick and seamless deployment of projects, minimizing downtime and maximizing productivity.</p>
+        </div>
+        <div class="feature-item">
+            <i class="fas fa-shield-alt feature-icon"></i>
+            <h3>Security First</h3>
+            <p>We prioritize the security of your data and operations, implementing robust measures to protect your assets.</p>
+        </div>
+    </div>
+</div>
+
+<div class="services-container">
+    <h2>Our Services</h2>
+    <p>We offer a wide range of services to meet your needs</p>
+    <div class="services-grid">
+        <div class="service-item">
+            <i class="fas fa-paint-brush service-icon"></i>
+            <h3>Design</h3>
+            <p>Creative and innovative design solutions to elevate your brand.</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-code service-icon"></i>
+            <h3>Development</h3>
+            <p>High-quality development services to bring your ideas to life.</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-chart-line service-icon"></i>
+            <h3>Marketing</h3>
+            <p>Strategic marketing solutions to grow your business.</p>
+        </div>
+    </div>
+</div>
+
+<!-- Contact Section -->
+<section class="section">
+    <h2>Contact Us</h2>
+    <p>Get in touch with our team for inquiries and collaborations</p>
+    <a href="#" class="cta-button">Contact Now</a>
+</section>
+
+<!-- Achievements Section -->
+<section class="section">
+    <h2>Our Achievements</h2>
+    <p>Discover some of our notable accomplishments and success stories</p>
+    <img src="img4.jpeg" alt="Achievement 1" style="margin: 10px 0;">
+    <img src="img5.jpeg" alt="Achievement 2" style="margin: 10px 0;">
+</section>
+<div class="testimonials-container">
+    <h2>What Our Clients Say</h2>
+    <div class="testimonials-grid">
+        <div class="testimonial-item">
+            <p class="testimonial-text">"Prodigy's team transformed our online presence with their innovative solutions. Our business has grown significantly!"</p>
+            <p class="testimonial-author">- Jane Doe, CEO of Acme Corp</p>
+        </div>
+        <div class="testimonial-item">
+            <p class="testimonial-text">"Their design and development skills are top-notch. We are extremely satisfied with the results."</p>
+            <p class="testimonial-author">- John Smith, CTO of BetaTech</p>
+        </div>
+        <div class="testimonial-item">
+            <p class="testimonial-text">"Thanks to Prodigy's marketing strategies, our customer engagement has increased by 50%."</p>
+            <p class="testimonial-author">- Sarah Lee, Marketing Manager at Gamma Solutions</p>
+        </div>
+    </div>
+</div>
+
+<!-- Footer Section -->
+<!-- Footer Section -->
+<footer class="footer">
+    <p>&copy; 2024 Prodigy. All rights reserved.</p>
+    <div class="social-icons">
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+    </div>
+</footer>
+
+<script>
+    const carouselSlide = document.querySelector('.carousel-slide');
+    const carouselImages = document.querySelectorAll('.carousel-slide img');
+
+    let counter = 1;
+    const size = carouselImages[0].clientWidth;
+
+    setInterval(() => {
+        carouselSlide.style.transition = 'transform 0.5s ease-in-out';
+        counter++;
+        if (counter >= carouselImages.length) {
+            counter = 0;
+        }
+        carouselSlide.style.transform = 'translateX(' + (-size * counter) + 'px)';
+    }, 2000);
+</script>
+
+</body>
+</html>
